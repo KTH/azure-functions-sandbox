@@ -3,7 +3,6 @@
   "configurations": [
     {
       "name": "Attach to Node Functions",
-      "nodeVersionHint": 14,
       "type": "node",
       "request": "attach",
       "port": 9229,

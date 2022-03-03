@@ -1,6 +1,9 @@
 {
   "name": "",
   "version": "",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts" : {
     "build": "tsc",
     "build:production": "npm run prestart && npm prune --production",
