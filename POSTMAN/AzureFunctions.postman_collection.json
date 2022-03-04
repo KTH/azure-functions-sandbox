@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "24f6dc35-b848-452b-af80-6737f59f626b",
+		"_postman_id": "3602cf74-3244-49b8-88f9-86cde8b9a5d6",
 		"name": "AzureFunctions",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,25 @@
 			"name": "Calling HTTPSaitoTrigger",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/HTTPSaitoTrigger?name=Sebastian",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"HTTPSaitoTrigger"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Sebastian"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -69,10 +87,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"input\": \"<ns0:personRecord xmlns:ns0=\\\"http://www.imsglobal.org/services/lis/pms2p0/wsdl11/sync/imspms_v2p0\\\"><ns0:sourcedGUID><ns0:sourcedId>9032e03b-b56f-11e7-96e6-896ca17746d1</ns0:sourcedId></ns0:sourcedGUID><ns0:person><ns0:name><ns0:nameType><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>FullName</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/nametypevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceValue><ns0:language>en-US</ns0:language><ns0:textString>FullName</ns0:textString></ns0:instanceValue></ns0:nameType><ns0:partName><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>First</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>First</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>Katarina</ns0:textString></ns0:instanceValue></ns0:partName><ns0:partName><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Last</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>Last</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>Tillman</ns0:textString></ns0:instanceValue></ns0:partName></ns0:name><ns0:address><ns0:addressType><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Temporary_Primary</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceValue><ns0:language>en-US</ns0:language><ns0:textString>Temporary_Primary</ns0:textString></ns0:instanceValue></ns0:addressType><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>NonfieldedStreetAddress1</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>NonfieldedStreetAddress1</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Postcode</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>Postcode</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>City</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>City</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Country</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>Country</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:instanceValue></ns0:addressPart></ns0:address><ns0:address><ns0:addressType><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Permanent_Primary</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceValue><ns0:language>en-US</ns0:language><ns0:textString>Permanent_Primary</ns0:textString></ns0:instanceValue></ns0:addressType><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>NonfieldedStreetAddress1</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>NonfieldedStreetAddress1</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>HARSJÖVÄGEN 19 A</ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Postcode</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>Postcode</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>76164</ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>City</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>City</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>NORRTÄLJE</ns0:textString></ns0:instanceValue></ns0:addressPart><ns0:addressPart><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Country</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/partnamevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceName><ns0:language>en-US</ns0:language><ns0:textString>Country</ns0:textString></ns0:instanceName><ns0:instanceValue><ns0:language>sv-SE</ns0:language><ns0:textString>Sverige</ns0:textString></ns0:instanceValue></ns0:addressPart></ns0:address><ns0:contactinfo><ns0:contactinfoType><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>EmailPrimary</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/contactinfotypevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceValue><ns0:language>en-US</ns0:language><ns0:textString>EmailPrimary</ns0:textString></ns0:instanceValue></ns0:contactinfoType><ns0:contactinfoValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:contactinfoValue></ns0:contactinfo><ns0:contactinfo><ns0:contactinfoType><ns0:instanceIdentifier><ns0:language>en-US</ns0:language><ns0:textString>Mobile</ns0:textString></ns0:instanceIdentifier><ns0:instanceVocabulary>http://www.imsglobal.org/lis/pmsv2p0/contactinfotypevocabularyv1p0</ns0:instanceVocabulary><ns0:instanceValue><ns0:language>en-US</ns0:language><ns0:textString>Mobile</ns0:textString></ns0:instanceValue></ns0:contactinfoType><ns0:contactinfoValue><ns0:language>sv-SE</ns0:language><ns0:textString></ns0:textString></ns0:contactinfoValue></ns0:contactinfo><ns0:extension><ns0:extensionNameVocabulary>LocallyDefined</ns0:extensionNameVocabulary><ns0:extensionTypeVocabulary>http://www.imsglobal.org/lis/pmsv2p0/extensionvocabularyv1p0</ns0:extensionTypeVocabulary><ns0:extensionField><ns0:fieldName>PersonIdentityNumber</ns0:fieldName><ns0:fieldType>string</ns0:fieldType><ns0:fieldValue>196304231407</ns0:fieldValue></ns0:extensionField><ns0:extensionField><ns0:fieldName>OriginEvent</ns0:fieldName><ns0:fieldType>string</ns0:fieldType><ns0:fieldValue>LADOK.AddAdmission</ns0:fieldValue></ns0:extensionField><ns0:extensionField><ns0:fieldName>DeceasedFlag</ns0:fieldName><ns0:fieldType>Boolean</ns0:fieldType><ns0:fieldValue>false</ns0:fieldValue></ns0:extensionField></ns0:extension></ns0:person></ns0:personRecord>\"\n  }"
+					"raw": "{ \"input\": \"<ns0:membershipRecord xmlns:ns0=\\\"http://www.imsglobal.org/services/lis/mms2p0/wsdl11/sync/imsmms_v2p0\\\"><ns0:membership><ns0:collectionSourcedId>84153836-891e-11ec-bc70-adb799404101</ns0:collectionSourcedId><ns0:membershipIdType>ExaminationRegistration</ns0:membershipIdType><ns0:member><ns0:personSourcedId>9018368d-d24a-11ea-a4db-82cca4dd4b3e</ns0:personSourcedId><ns0:role><ns0:roleType>Student</ns0:roleType><ns0:status>Inactive</ns0:status><ns0:dataSource>Ladok</ns0:dataSource><ns0:extension><ns0:extensionField><ns0:fieldName>OriginEvent</ns0:fieldName><ns0:fieldType>string</ns0:fieldType><ns0:fieldValue>LADOK.RemoveActivityOccasionApplication</ns0:fieldValue></ns0:extensionField></ns0:extension></ns0:role></ns0:member></ns0:membership></ns0:membershipRecord>\"\n  }"
 				},
 				"url": {
-					"raw": "http://localhost:7071/admin/functions/TestLisAdapter",
+					"raw": "http://localhost:7071/admin/functions/RemoveUnregisteredStudent",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -81,7 +99,7 @@
 					"path": [
 						"admin",
 						"functions",
-						"TestLisAdapter"
+						"RemoveUnregisteredStudent"
 					]
 				}
 			},
