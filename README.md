@@ -25,4 +25,12 @@ Add the following key/value to local.settings.json:
 ```
 "SERVICE_BUS_CONNECTION_STRING": "[connection string]",
 ```
-You obtain the connection string from Azure Portal. Don't inclue `EntityPath=...` https://stackoverflow.com/questions/55899118/how-to-send-a-message-to-azure-service-bus-event-to-event-hub-bus-from-single
+You obtain the connection string from Azure Portal. Don't inclue `EntityPath=...`
+https://stackoverflow.com/questions/55899118/how-to-send-a-message-to-azure-service-bus-event-to-event-hub-bus-from-single
+
+## Local Development
+Azure Function Developer Guide
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference?tabs=blob
+
+Trigger non-HTTP functions during development
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#non-http-triggered-functions
