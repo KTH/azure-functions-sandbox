@@ -4,6 +4,8 @@
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "SERVICE_BUS_SUBSCRIPTION_NAME": "[subscription name. e.g. lms-carlos]",
     "SERVICE_BUS_CONNECTION_STRING": "[connection string]",
+    "UG_USERNAME": "[ug username]",
+    "UG_PASSWORD": "[ug password]",
     "AzureWebJobsStorage": ""
   }
 }

@@ -5,7 +5,7 @@ const c = new Client({
 });
 
 export async function getKthId(ladokUid: string) {
-  await c.bind("", "");
+  await c.bind(process.env["UG_USERNAME"], process.env["UG_PASSWORD"]);
 
   const searchResults = await c.search("OU=UG,DC=ug,DC=kth,DC=se", {
     // In UG there are two attributes that apparently return the same info: "ugLadok3StudentUid" and "kthLadok3StudentUid"
