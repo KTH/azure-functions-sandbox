@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "azure-functions-sandbox",
   "version": "",
   "engines": {
     "node": ">=14"

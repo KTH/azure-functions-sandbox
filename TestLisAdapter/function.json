@@ -5,7 +5,7 @@
       "type": "serviceBusTrigger",
       "direction": "in",
       "topicName": "ladok-lis",
-      "subscriptionName": "lms-sebastian",
+      "subscriptionName": "%SERVICE_BUS_SUBSCRIPTION_NAME%",
       "connection": "SERVICE_BUS_CONNECTION_STRING"
     }
   ],

@@ -12,7 +12,7 @@ NOTE: Make sure you have Node >=14
 https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-typescript
 
 To start application and allow debugging in VS Code go to debug pane and select:
-- Run Script: start
+- "Node.js" > "Run Script: start"
 
 NOTE: If you use `nvm` and the default Node version on your system isn't >=14 this will fail.
 Make sure you select Node 14 or higher as your default before launching VS Code.
@@ -21,8 +21,11 @@ Make sure you select Node 14 or higher as your default before launching VS Code.
 https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-typescript
 
 ## Configuring the TestLisAdapter Function
+Copy `local.setting.json.in` to `local.settings.json` and edit it.
+
 Add the following key/value to local.settings.json:
 ```
+"SERVICE_BUS_SUBSCRIPTION_NAME": "[subscription name. e.g. lms-carlos]",
 "SERVICE_BUS_CONNECTION_STRING": "[connection string]",
 ```
 You obtain the connection string from Azure Portal. Don't inclue `EntityPath=...`
