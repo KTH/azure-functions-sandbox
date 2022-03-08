@@ -8,8 +8,13 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     const parser = new XMLParser();
     const jsonObj = parser.parse(message);
 
-    const activityRoundId = jsonObj["ns0:membershipRecord"]["ns0:membership"]["ns0:collectionSourcedId"];
-    const studentId = jsonObj["ns0:membershipRecord"]["ns0:membership"]["ns0:member"]["ns0:personSourcedId"];
+    const activityRoundId = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"]?.["ns0:collectionSourcedId"];
+    const studentId = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"]?.["ns0:member"]?.["ns0:personSourcedId"];
+
+    if (!activityRoundId || !studentId) {
+        context.log("This message doesn't include either activity round id or student id. Skipping...")
+        return;
+    }
 
     const kthId = await getKthId(studentId);
 
