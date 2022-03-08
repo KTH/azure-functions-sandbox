@@ -6,6 +6,10 @@
     "SERVICE_BUS_CONNECTION_STRING": "[connection string]",
     "UG_USERNAME": "[ug username]",
     "UG_PASSWORD": "[ug password]",
-    "AzureWebJobsStorage": ""
+    "AzureWebJobsStorage": "",
+
+    "AzureWebJobs.HTTPSaitoTrigger.Disabled": false,
+    "AzureWebJobs.TestLisAdapter.Disabled": false,
+    "AzureWebJobs.RemoveUnregisteredStudent.Disabled": false
   }
 }
