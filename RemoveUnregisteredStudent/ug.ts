@@ -17,5 +17,7 @@ export async function getKthId(ladokUid: string) {
     },
   });
 
+  await c.unbind();
+
   return searchResults.searchEntries[0]?.ugKthid;
 }
