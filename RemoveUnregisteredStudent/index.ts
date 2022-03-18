@@ -1,7 +1,7 @@
 import { AzureFunction, Context } from "@azure/functions"
 import { assert } from "console";
 import { XMLParser } from "fast-xml-parser";
-import { TKthId, TActivityRoundId, TEnrollmentId } from './types';
+import { TActivityRoundId } from './types';
 import { getKthId } from "./ug";
 import { getCourseEnrollment, removeEnrollment } from "./canvasApi";
 
