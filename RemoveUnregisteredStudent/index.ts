@@ -14,6 +14,7 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     const tmpMembership = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"];
     const activityRoundId = tmpMembership?.["ns0:collectionSourcedId"];
     const studentId = tmpMembership?.["ns0:member"]?.["ns0:personSourcedId"];
+    assert(activityRoundId, "Message is missing 'activityRoundId'");
     assert(studentId, "Message is missing 'studentId'");
 
     // 2. Call UG to get KTH ID
