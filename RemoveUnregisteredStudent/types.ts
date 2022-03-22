@@ -1,5 +1,15 @@
 import { assert } from "console";
 
+/**
+ * By passing a simple object with a specifically named property we
+ * get strong(er) typing in Typscript. We are leveraging the
+ * structural typing of TS to distringuish between the classes
+ * and thereby avoiding mixup.
+ * 
+ * Unlike type aliases or primitives, these types will show in the IDE so you
+ * can track how the data is passed through the application.
+ */
+
 export class TKthId {
   _valTKthId: string;
   constructor(val: string) {
