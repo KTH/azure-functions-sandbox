@@ -1,6 +1,5 @@
 import CanvasApi from "@kth/canvas-api";
 import { assert } from "console";
-import { TKthId, TActivityRoundId, TEnrollmentId } from "./types";
 
 let canvasApi: CanvasApi;
 
@@ -14,7 +13,7 @@ if (process.env.CANVAS_API_URL) {
 /**
  * Get student course enrollment from Canvas.
  */
-export async function getCourseEnrollment(activityRoundId: TActivityRoundId, kthId: TKthId) {
+export async function getCourseEnrollment(activityRoundId: string, kthId: string) : Promise<{id: number}>{
   assert(canvasApi, "Missing canvasApi");
   // https://github.com/instructure/canvas-lms/blob/master/app/controllers/courses_controller.rb
   // kthId is called sis_user_id in KTH Canvas
@@ -27,15 +26,14 @@ export async function getCourseEnrollment(activityRoundId: TActivityRoundId, kth
     }
   ).catch((err) => { throw err });
   // TODO: Handle errors better
-  const { id, ...props } = res.body;
 
-  return { id: new TEnrollmentId(id), ...props };
+  return res.body;
 }
 
 /**
  * Remove course enrollment of studend in Canvas.
  */
-export async function removeEnrollment(activityRoundId: TActivityRoundId, enrollmentId: TEnrollmentId) : Promise<void> {
+export async function removeEnrollment(activityRoundId: string, enrollmentId: number) : Promise<void> {
   assert(canvasApi, "Missing canvasApi");
 
   // https://github.com/instructure/canvas-lms/blob/master/app/controllers/enrollments_api_controller.rb

@@ -1,7 +1,6 @@
 import { AzureFunction, Context } from "@azure/functions"
 import { assert } from "console";
 import { XMLParser } from "fast-xml-parser";
-import { TActivityRoundId } from './types';
 import { getKthId } from "./ug";
 import { getCourseEnrollment, removeEnrollment } from "./canvasApi";
 
@@ -13,7 +12,7 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     const jsonObj = parser.parse(message);
     
     const tmpMembership = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"];
-    const activityRoundId = new TActivityRoundId(tmpMembership?.["ns0:collectionSourcedId"]);
+    const activityRoundId = tmpMembership?.["ns0:collectionSourcedId"];
     const studentId = tmpMembership?.["ns0:member"]?.["ns0:personSourcedId"];
     assert(studentId, "Message is missing 'studentId'");
 
@@ -22,12 +21,12 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     // context.log(activityRoundId, studentId, kthId);
 
     // 3. Get the enrollment id for the given course
-    const { id } = await getCourseEnrollment(activityRoundId, kthId)
+    const { id: enrollmentId } = await getCourseEnrollment(activityRoundId, kthId)
         .catch((err) => { throw err });
         // TODO: Handle errors better
 
     // 4. Remove the enrollment
-    await removeEnrollment(activityRoundId, id)
+    await removeEnrollment(activityRoundId, enrollmentId)
         .catch((err) => { throw err });
         // TODO: Handle errors better
     
