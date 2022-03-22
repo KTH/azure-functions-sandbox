@@ -1,12 +1,14 @@
+import { assert } from "console";
 
 export class TKthId {
-  _val: string;
+  _valTKthId: string;
   constructor(val: string) {
-    this._val = val;
+    assert(val, "A TKthId can't be null or empty");
+    this._valTKthId = val;
   }
   
   toString() {
-    return this._val;
+    return this._valTKthId;
   }
 }
 
@@ -14,23 +16,25 @@ export class TKthId {
  * LADOK activity round id
  */ 
 export class TActivityRoundId {
-  _val: string;
+  _valTActivityRoundId: string;
   constructor(val: string) {
-    this._val = val;
+    assert(val, "An AvtivityRoundId can't be null or empty");
+    this._valTActivityRoundId = val;
   }
 
   toString() {
-    return this._val;
+    return this._valTActivityRoundId;
   }
 }
 
 export class TEnrollmentId {
-  _val: number;
+  _valTEnrollmentId: number;
   constructor(val: number) {
-    this._val = val;
+    assert(val != null, "An EnrollmentId can't be null or undefined");
+    this._valTEnrollmentId = val;
   }
 
   toString() {
-    return this._val.toString();
+    return this._valTEnrollmentId.toString();
   }
 }

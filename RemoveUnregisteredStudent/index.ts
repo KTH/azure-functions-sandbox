@@ -11,11 +11,10 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     // 1. Parse incomming mesage
     const parser = new XMLParser();
     const jsonObj = parser.parse(message);
-
-    const activityRoundId = new TActivityRoundId(jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"]?.["ns0:collectionSourcedId"]);
-    const studentId = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"]?.["ns0:member"]?.["ns0:personSourcedId"];
-
-    assert(activityRoundId, "Message is missing 'activityRoundId'");
+    
+    const tmpMembership = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"];
+    const activityRoundId = new TActivityRoundId(tmpMembership?.["ns0:collectionSourcedId"]);
+    const studentId = tmpMembership?.["ns0:member"]?.["ns0:personSourcedId"];
     assert(studentId, "Message is missing 'studentId'");
 
     // 2. Call UG to get KTH ID
