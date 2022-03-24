@@ -1,5 +1,5 @@
 import CanvasApi from "@kth/canvas-api";
-import { assert } from "console";
+import assert from "assert";
 
 let canvasApi: CanvasApi;
 

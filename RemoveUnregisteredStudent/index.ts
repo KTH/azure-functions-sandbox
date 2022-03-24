@@ -1,5 +1,5 @@
 import { AzureFunction, Context } from "@azure/functions"
-import { assert } from "console";
+import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import { getKthId } from "./ug";
 import { getCourseEnrollment, removeEnrollment } from "./canvasApi";
