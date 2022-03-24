@@ -21,15 +21,19 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
 
     // 2. Call UG to get KTH ID
     const kthId = await getKthId(studentId);
+    // If you want to experiment with a specific user
+    // and don't have their LADOK id, you can just use this:
+    // const kthId = '[enter kth id]';
     // context.log(activityRoundId, studentId, kthId);
 
     // 3. Get the enrollment id for the given course
-    const { id: enrollmentId } = await getCourseEnrollment(activityRoundId, kthId)
+    const res  = await getCourseEnrollment(activityRoundId, kthId)
         .catch((err) => { throw err });
         // TODO: Handle errors better
 
+    const { id: enrollmentId, course_id: courseId } = res[0];
     // 4. Remove the enrollment
-    await removeEnrollment(activityRoundId, enrollmentId)
+    await removeEnrollment(courseId, enrollmentId)
         .catch((err) => { throw err });
         // TODO: Handle errors better
     
