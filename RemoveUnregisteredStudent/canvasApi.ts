@@ -8,6 +8,8 @@ if (process.env.CANVAS_API_URL) {
       process.env.CANVAS_API_URL,
       process.env.CANVAS_API_ADMIN_TOKEN
   );
+} else {
+  throw(new Error("Missing env-var CANVAS_API_URL"));
 }
 
 /**
