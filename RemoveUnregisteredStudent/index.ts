@@ -1,5 +1,4 @@
 import { AzureFunction, Context } from "@azure/functions"
-import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import { getKthId } from "./ug";
 import { getCourseEnrollment, removeEnrollment } from "./canvasApi";
@@ -14,8 +13,11 @@ const serviceBusTopicTrigger: AzureFunction = async function(context: Context, m
     const tmpMembership = jsonObj?.["ns0:membershipRecord"]?.["ns0:membership"];
     const activityRoundId = tmpMembership?.["ns0:collectionSourcedId"];
     const studentId = tmpMembership?.["ns0:member"]?.["ns0:personSourcedId"];
-    assert(activityRoundId, "Message is missing 'activityRoundId'");
-    assert(studentId, "Message is missing 'studentId'");
+
+    if (!activityRoundId || !studentId) {
+        context.log("Skipping! This message is missing 'activityRoundId' or 'studentId', so it isn't a message we can process.");
+        return;
+    }
 
     // 2. Call UG to get KTH ID
     const kthId = await getKthId(studentId);
