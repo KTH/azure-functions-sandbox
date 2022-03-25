@@ -4,7 +4,7 @@ const c = new Client({
   url: "ldaps://ldap.ug.kth.se",
 });
 
-export async function getKthId(ladokUid: string) {
+export async function getKthId(ladokUid: string) : Promise<string> {
   await c.bind(process.env["UG_USERNAME"], process.env["UG_PASSWORD"]);
 
   const searchResults = await c.search("OU=UG,DC=ug,DC=kth,DC=se", {
@@ -19,5 +19,5 @@ export async function getKthId(ladokUid: string) {
 
   await c.unbind();
 
-  return searchResults.searchEntries[0]?.ugKthid;
+  return searchResults.searchEntries[0]?.ugKthid.toString();
 }

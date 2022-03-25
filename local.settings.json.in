@@ -6,6 +6,8 @@
     "SERVICE_BUS_CONNECTION_STRING": "[connection string]",
     "UG_USERNAME": "[ug username]",
     "UG_PASSWORD": "[ug password]",
+    "CANVAS_API_URL": "",
+    "CANVAS_API_ADMIN_TOKEN": "",
     "AzureWebJobsStorage": "",
 
     "AzureWebJobs.HTTPSaitoTrigger.Disabled": false,
